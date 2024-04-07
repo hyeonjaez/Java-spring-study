@@ -1,0 +1,39 @@
+= 데이터베이스 설계
+
+* 쇼핑몰 link:resources/shoppingmall.sql[shoppingmall.sql]를 이용하여 구현합니다.
+
+* 2. 기능 및 요구사항을 참고합니다.
+* 회원은 아래 users table을 사용하여 설계합니다.
+** 'Customers' table은 사용하지 않습니다.
+
+* 회원 테이블은 변경할 수 없습니다.
+* Table 생성 시 Innodb Engine을 사용합니다.
+* `Charset` 은 서버에 설정된 `utf8mb4` 를 사용합니다.
+
+== table : users
+* todo 구현시 사용할 users table입니다.
+** *회원은 제공해 드린 users table을 사용합니다.*
+* 제공해 드린 MySQL 계정에 아래 script를 실행합니다.
+
+----
+CREATE TABLE `users` (
+  `user_id` varchar(50) NOT NULL COMMENT '아이디',
+  `user_name` varchar(50) NOT NULL COMMENT '이름',
+  `user_password` varchar(200) NOT NULL COMMENT 'mysql password 사용',
+  `user_birth` varchar(8) NOT NULL COMMENT '생년월일 : 19840503',
+  `user_auth` varchar(10) NOT NULL COMMENT '권한: ROLE_ADMIN,ROLE_USER',
+  `user_point` int NOT NULL COMMENT 'default : 1000000',
+  `created_at` datetime NOT NULL COMMENT '가입일자',
+  `latest_login_at` datetime DEFAULT NULL COMMENT '마지막 로그인 일자',
+  PRIMARY KEY (`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='회원';
+----
+
+== 설계 도구
+* https://www.erdcloud.com[erdcloud.com]을 사용할 수 있습니다.(필수는 아님)
+
+== ERD 제출
+* link:../../submit/erd/[/submit/erd]경로에 이미지 파일을 제출합니다.
+
+== DDL Script 제출
+* link:../../submit/erd/script.sql[/submit/erd/script.sql] 파일에 작성합니다.

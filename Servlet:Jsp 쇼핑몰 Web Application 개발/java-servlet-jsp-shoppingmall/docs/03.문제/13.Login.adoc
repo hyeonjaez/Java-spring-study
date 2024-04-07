@@ -1,0 +1,49 @@
+= Login
+
+== LoginController
+
+* GET /login.do로 요청하면 /WEB-INF/views/shop/login/login_form.jsp view를 응답하는 Controller입니다.
+* 이미 로그인되어 있다면 (Session이 존재 한다면) 'redirect:/index.do' 를 반환합니다.
+
+
+[source,java]
+----
+include::{docfile}/../../../src/main/java/com/nhnacademy/shoppingmall/controller/auth/LoginController.java[]
+----
+
+=== login_form.jsp
+* jsp를 view로 사용 시 session=false로 설정합니다.
+* default=true 이며, 페이지 접근 시 자동으로 session이 생성됩니다.
+
+----
+<%@ page contentType="text/html;charset=UTF-8" language="java" session="false" trimDirectiveWhitespaces="true" %>
+----
+
+* user_name, user_password가 /loginAction.do로 POST 방식으로 전송됩니다.
+** UI는 https://getbootstrap.com/docs/5.3/examples/sign-in/ 사용했습니다.
+** 직접 UI구현 해도 상관없습니다.
+
+[source,html]
+----
+include::../../src/main/webapp/WEB-INF/views/shop/login/login_form.jsp[]
+----
+
+== LoginPostController
+* POST /loginAction.do로 user_id, user_password가  parameter로 전송됩니다.
+* UserService의 doLogin method를 이용하여 로그인을 구현합니다.
+* 로그인된 sesion은 60분간 유지됩니다.
+
+[source,java]
+----
+include::../../src/main/java/com/nhnacademy/shoppingmall/controller/auth/LoginPostController.java[]
+----
+
+== LogoutController
+
+* 로그아웃 기능을 구현합니다.
+* 로그아웃 시 session을 소멸합니다.
+
+[source,java]
+----
+include::../../src/main/java/com/nhnacademy/shoppingmall/controller/auth/LogoutController.java[]
+----

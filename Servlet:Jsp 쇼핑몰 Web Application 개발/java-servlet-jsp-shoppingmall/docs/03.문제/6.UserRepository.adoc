@@ -1,0 +1,27 @@
+= UserRepository
+
+== UserRepository
+
+[source,java]
+----
+include::{docdir}/../../src/main/java/com/nhnacademy/shoppingmall/user/repository/UserRepository.java[]
+----
+
+== UserRepositoryImpl
+
+* UserRepository interface를 구현합니다.
+* todo#3-1 sql insertion이 발생하지 않도록 수정합니다.
+
+[source,java]
+----
+include::{docdir}/../../src/main/java/com/nhnacademy/shoppingmall/user/repository/impl/UserRepositoryImpl.java[]
+----
+
+== Test Code
+
+* link:../../src/test/java/com/nhnacademy/shoppingmall/check/user/repository/impl/UserRepositoryImplTest.java[UserRepositoryImplTest.java] 통과해야 합니다.
+
+[source,java]
+----
+include::{docdir}/../../src/test/java/com/nhnacademy/shoppingmall/check/user/repository/impl/UserRepositoryImplTest.java[]
+----

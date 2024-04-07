@@ -1,0 +1,24 @@
+= Connection Pool
+
+== Database 연결
+
+* DBCP2를 설정합니다.
+* mysql 계정은 아래 링크를 참고합니다.
+** https://nhnacademy.dooray.com/task/3570281639368311346/3666108764522311867
+* initialSize, maxTotal, maxIdle, minIdle 은 모두 5로 설정합니다.
+* Validation Query를 설정하세요
+
+== DbUtils.java
+
+[source,java]
+----
+include::../../src/main/java/com/nhnacademy/shoppingmall/common/util/DbUtils.java[]
+----
+
+== Test Code
+* Test Code가 통과하도록 구현합니다.
+
+[source,java]
+----
+include::../../src/test/java/com/nhnacademy/shoppingmall/check/common/util/DbUtilsTest.java[]
+----

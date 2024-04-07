@@ -1,0 +1,16 @@
+= ServletContextListener
+
+* link:../../src/main/java/com/nhnacademy/shoppingmall/common/listener/ApplicationListener.java[ApplicationListener.java] todo를 구현합니다.
+
+** 로그인 테스트를 위한 ROLE_ADMIN 관리자 User를 등록합니다.
+*** 아이디 : admin , 비밀번호 : 12345
+** 테스트를 위한  ROLE_USER 사용자 계정을 등록합니다.
+*** 아이디 : user ,  비밀번호 : 12345
+
+** 등록과 동시에 100만 포인트를 부여합니다.
+
+
+[source,java]
+----
+include::../../src/main/java/com/nhnacademy/shoppingmall/common/listener/ApplicationListener.java[]
+----

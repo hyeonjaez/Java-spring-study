@@ -1,0 +1,22 @@
+= 쇼핑몰 Web Application 개발
+
+* 데이터베이스 교육에서 팀별로 설계한 쇼핑몰 ERD를 기반으로 Application을 구현합니다.
+* 모든 기능은 Servlet/JSP 환경에서 구현합니다.
+
+== 참고
+
+* MySQL 계정은 아래링크를 참고 합니다.(반드시 본인의 학번을 확인 후 사용합니다.)
+** https://nhnacademy.dooray.com/task/3570281639368311346/3666108764522311867
+
+== 구현 및 제출
+* link:resources/shoppingmall.sql[shoppingmall.sql]을 참고하여 erd를 설계 합니다.
+* link:15.More.adoc[15.More.adoc] 최대한 할 수 있는 데까지 구현합니다.
+* todo는 1번부터 순서대로 진행합니다.
+* git clone 후 구현합니다.
+* main branch를 기준으로  feature/{학번} branch를 생성하여 진행합니다.
+** ex) feature/JBGW04-001, feature/JBGW04-002, ...
+* 학번으로 생성한 branch를 origin에 push 합니다.(push는 2번이상 할 수 없습니다.)
+
+== Test Code
+* ** com.nhnacademy.shoppingmall.check 하위 package에 Test Code를 작성하지 않습니다. **
+

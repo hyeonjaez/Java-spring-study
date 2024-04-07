@@ -1,0 +1,26 @@
+= UserService
+
+== UserService Interface
+
+[source,java]
+----
+include::{docdir}/../../src/main/java/com/nhnacademy/shoppingmall/user/service/UserService.java[]
+----
+
+== UserServiceImpl
+
+* `UserService` 를 구현합니다.
+
+[source,java]
+----
+include::{docdir}/../../src/main/java/com/nhnacademy/shoppingmall/user/service/impl/UserServiceImpl.java[]
+----
+
+== Test Code
+
+* link:../../src/test/java/com/nhnacademy/shoppingmall/user/service/impl/UserServiceImplTest.java[UserServiceImplTest]를 통과해야 합니다.
+
+[source,java]
+----
+include::{docdir}/../../src/test/java/com/nhnacademy/shoppingmall/check/user/service/impl/UserServiceImplTest.java[]
+----

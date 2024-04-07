@@ -1,0 +1,20 @@
+= Transaction 관리
+
+* Isolation level : READ COMMITTED 설정합니다.
+* Auto Commit을 사용하지 않습니다.
+* Error가 발생하면 RollBack 합니다.
+* Connection은 `ThreadLocal` 을 사용하여 관리합니다.
+
+== DbConnectionThreadLocal.java
+* `todo` 를 읽고 구현합니다.
+
+[source,java]
+----
+include::{docdir}/../../src/main/java/com/nhnacademy/shoppingmall/common/mvc/transaction/DbConnectionThreadLocal.java[]
+----
+
+== Reference
+
+* https://github.com/nhnacademy-bootcamp/jdbc/blob/main/day02/02.DBCP/index.adoc
+* https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/ThreadLocal.html[java11,ThreadLocal]
+* https://www.baeldung.com/java-threadlocal[baeldung, java-threadlocal]

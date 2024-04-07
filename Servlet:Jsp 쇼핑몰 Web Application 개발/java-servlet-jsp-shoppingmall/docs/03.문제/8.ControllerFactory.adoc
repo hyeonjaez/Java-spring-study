@@ -1,0 +1,78 @@
+= ControllerFactory
+
+== Front Controller Pattern 문제점
+
+* 요청될 때마다 Command 객체를 생성하고 해당요청을 Command 객체에 맵핑해야 합니다.
+
+[source, java]
+----
+private Command resolveCommand(String servletPath, String method){
+   Command command = null;
+    if("/student/list.do".equals(servletPath) && "GET".equalsIgnoreCase(method) ){
+      command = new StudentListController();
+    }else if("/student/view.do".equals(servletPath) && "GET".equalsIgnoreCase(method) ){
+        command = new StudentViewController();
+    }else if("/student/delete.do".equals(servletPath) && "POST".equalsIgnoreCase(method) ){
+        command = new StudentDeleteController();
+    }else if("/student/update.do".equals(servletPath) && "GET".equalsIgnoreCase(method) ){
+        command = new StudentUpdateFormController();
+    }else if("/student/update.do".equals(servletPath) && "POST".equalsIgnoreCase(method) ){
+        command = new StudentUpdateController();
+    }else if("/student/register.do".equals(servletPath) && "GET".equalsIgnoreCase(method) ){
+        command = new StudentRegisterFormController();
+    }else if("/student/register.do".equals(servletPath) && "POST".equalsIgnoreCase(method) ){
+        command = new StudentRegisterController();
+    }else if("/error.do".equals(servletPath)){
+        command = new ErrorController();
+    }
+    return command;
+}
+----
+
+== 개선
+
+[source,java]
+----
+include::{docdir}/../../src/main/java/com/nhnacademy/shoppingmall/common/mvc/annotation/RequestMapping.java[]
+----
+
+* Servlet과 url을 맵핑하기 위해서 @WebServlet을 사용합니다.
+
+[source,java]
+----
+@WebServlet(name = "frontServlet",urlPatterns = {"*.do"})
+public class FrontServlet extends HttpServlet {
+    //...
+}
+----
+
+* @WebServlet 처럼 비슷하게 동작할 수 있는 `@RequestMapping` 을 정의하고 method (GET|POST) + 요청경로("/index.do")가 맵핑되어 실행될 수 있도록 개선합니다.
+
+[source,java]
+----
+include::../../src/main/java/com/nhnacademy/shoppingmall/controller/index/IndexController.java[]
+----
+
+== 구현
+
+* link:../../src/main/java/com/nhnacademy/shoppingmall/common/mvc/controller/ControllerFactory.java[ControllerFactory.java]의 todo를 구현합니다.
+
+
+[source,java]
+----
+include::../../src/main/java/com/nhnacademy/shoppingmall/common/mvc/controller/ControllerFactory.java[]
+----
+
+== Test Code
+*  link:../../src/test/java/com/nhnacademy/shoppingmall/check/common/mvc/controller/ControllerFactoryTest.java[ControllerFactoryTest.java] Test Code를 통과해야 합니다.
+
+[source,java]
+----
+include::../../src/test/java/com/nhnacademy/shoppingmall/check/common/mvc/controller/ControllerFactoryTest.java[]
+----
+
+== Reference
+
+* https://docs.oracle.com/javaee/7/api/javax/servlet/ServletContainerInitializer.html[java,ServletContainerInitializer]
+
+* https://github.com/nhnacademy-bootcamp/java-servlet-jsp/blob/main/day02/05.Servlet%203.0%20Annotations/index.adoc#servletcontainerinitializer-%EA%B5%AC%ED%98%84[교재, ServletContainerInitializer 구현]
