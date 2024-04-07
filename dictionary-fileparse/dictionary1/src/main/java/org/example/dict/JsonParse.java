@@ -1,19 +1,19 @@
-//package src.main.java.org.example.dict;
-//
-//import java.io.File;
-//import java.io.FileNotFoundException;
-//import java.io.FileReader;
-//import java.io.IOException;
-//import java.io.Reader;
-//import java.util.ArrayList;
-//import java.util.HashMap;
-//import java.util.List;
-//import java.util.Map;
-//public class JsonParse implements FileParse {
-//
-//    @Override
-//    public Map<String, List<String>> parseFile(File file) {
-//        Map<String, List<String>> parseList = new HashMap<>();
+package src.main.java.org.example.dict;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.Reader;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+public class JsonParse implements FileParse {
+
+    @Override
+    public Map<String, List<String>> parseFile(File file) {
+        Map<String, List<String>> parseList = new HashMap<>();
 //        try (Reader reader = new FileReader(file)) {
 //            JSONParser parser = new JSONParser();
 //            Object obj = parser.parse(reader);
@@ -40,7 +40,7 @@
 //        } catch (ParseException e) {
 //            throw new RuntimeException(e);
 //        }
-//
-//        return parseList;
-//    }
-//}
+
+        return parseList;
+    }
+}
