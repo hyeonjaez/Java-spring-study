@@ -11,6 +11,10 @@
 - 자바 이터레이터에 대한 개념 학습
 - 예외상황 처리 및 test 코드 작성 학습
 
+## Servlet/Jsp를 이용한 쇼핑몰 Web Application 개발
+
+- Servlet/Jsp 환경에서 구현
+
 ## Spring Core
 
 - Spring Framework 특징
