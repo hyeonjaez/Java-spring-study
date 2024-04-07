@@ -8,8 +8,5 @@ public class Main {
         File file = new File(path);
         new Dictionary(file);
 
-
-
-
     }
 }

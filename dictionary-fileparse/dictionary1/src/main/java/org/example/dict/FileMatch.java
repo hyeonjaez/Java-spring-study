@@ -2,10 +2,9 @@ package src.main.java.org.example.dict;
 
 import java.io.File;
 import java.util.Objects;
-import lombok.Getter;
 
 public class FileMatch {
-    @Getter
+
     File file;
     String extension;
 
@@ -13,6 +12,10 @@ public class FileMatch {
         this.file = file;
         this.extension = "";
         toExtractExtension();
+    }
+
+    public File getFile(){
+        return this.file;
     }
 
     public void toExtractExtension() {

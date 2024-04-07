@@ -6,14 +6,17 @@ import java.util.Map;
 import java.util.Objects;
 
 public class FileProxy implements FileParse {
-    @Getter
-    private final File file;
+    private File file;
     private String extension;
 
     public FileProxy(File file) {
         this.file = file;
         this.extension = "";
         toExtractExtension();
+    }
+
+    public File getFile() {
+        return this.file;
     }
 
     public void toExtractExtension() {
