@@ -1,0 +1,15 @@
+:hardbreaks:
+= 생성
+
+* 점진적 생성 패턴
+- 이를 위해 setter 가 있다
+- setter가 있으면 좀 위험해서 이를 보안하기 위해 Builder 클래스를 만들어 준다.
+
+
+* stream
+- 시간흐름에 따라서 들어오는 데이터를 추상화
+- 데이터를 표준적으로 읽기 위한 거
+- streaming
+
+* stream api
+- stream

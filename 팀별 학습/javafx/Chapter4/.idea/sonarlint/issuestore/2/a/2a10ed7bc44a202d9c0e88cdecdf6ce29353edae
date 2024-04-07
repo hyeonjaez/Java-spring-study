@@ -1,0 +1,18 @@
+
+j
+java:S1192›"NDefine a constant instead of duplicating this literal "(row,col) = (" 5 times.(û¥€Íùÿÿÿÿ
+o
+java:S1192œ"XDefine a constant instead of duplicating this literal ") is not in the mosaic." 5 times.(ó¾žý
+M
+java:S3878P"8Remove this array creation and simply pass the elements.(­’’Z
+y
+java:S2142}"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(ð‹Ù¼ùÿÿÿÿ
+C	java:S108}")Either remove or fill this block of code.(ð‹Ù¼ùÿÿÿÿ
+R
+java:S2696§"6Make the enclosing method "static" or remove this set.(Ùÿàƒúÿÿÿÿ
+M
+java:S2696ª"6Make the enclosing method "static" or remove this set.(—ŠÖí
+M
+java:S2696¬"6Make the enclosing method "static" or remove this set.(þó×¯
+C
+java:S1602·",Remove useless curly braces around statement(Â¬Èª
