@@ -1,4 +1,4 @@
-package org.example.dict;
+package src.main.java.org.example.dict;
 
 import java.io.BufferedReader;
 import java.io.File;

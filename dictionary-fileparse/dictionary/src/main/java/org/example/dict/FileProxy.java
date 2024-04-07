@@ -1,10 +1,9 @@
-package org.example.dict;
+package src.main.java.org.example.dict;
 
 import java.io.File;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import lombok.Getter;
 
 public class FileProxy implements FileParse {
     @Getter

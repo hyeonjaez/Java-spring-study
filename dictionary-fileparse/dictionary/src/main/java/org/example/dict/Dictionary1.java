@@ -1,5 +1,5 @@
 
-package org.example.dict;
+package src.main.java.org.example.dict;
 
 
 import java.io.File;

@@ -1,4 +1,4 @@
-package org.example.dict;
+package src.main.java.org.example.dict;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -9,11 +9,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
-
 public class JsonParse implements FileParse {
 
     @Override
