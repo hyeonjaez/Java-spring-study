@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>출생신고서</title>
+</head>
+<body>
+<h2>출생신고서</h2>
+<table border="1">
+  <tr>
+    <th>신고일</th>
+    <th>이름</th>
+    <th>성별</th>
+    <th>출생일시</th>
+    <th>출생장소</th>
+    <th>등록기준지</th>
+  </tr>
+  <tr>
+    <td th:text="${birthResident.birthDeathReportDate}">신고일</td>
+    <td th:text="${birthResident.name}">이름</td>
+    <td th:text="${birthResident.genderCode}">성별</td>
+    <td th:text="${birthResident.birthDate}">출생일시</td>
+    <td th:text="${birthResident.birthPlaceCode}">출생장소</td>
+    <td th:text="${birthResident.registrationBaseAddress}">등록기준지</td>
+  </tr>
+</table>
+
+<table border="1">
+  <tr>
+    <th>성명</th>
+    <th>주민등록번호</th>
+  </tr>
+
+  <tr th:each="parent : ${residentParentList}">
+    <td th:text ="${parent.name}">이름</td>
+    <td th:text="${parent.residentRegistrationNumber}">주민등록번호</td>
+  </tr>
+</table>
+
+<table border ="1">
+  <tr>
+    <th>성명</th>
+    <th>주민등록번호</th>
+    <th>자격</th>
+    <th>이메일</th>
+    <th>전화번호</th>
+  </tr>
+
+  <tr>
+    <td th:text="${birthReportResident.name}"></td>
+    <td th:text="${birthReportResident.residentRegistrationNumber}"></td>
+    <td th:text="${birthReportResident.birthReportQualificationsCode}"></td>
+    <td th:text="${birthReportResident.emailAddress}"></td>
+    <td th:text="${birthReportResident.phoneNumber}"></td>
+  </tr>
+</table>
+</body>
+</html>

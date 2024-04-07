@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Product List</title>
+</head>
+<body>
+
+<h2>Product List</h2>
+
+<table>
+    <thead>
+    <tr>
+        <th>Model Name</th>
+        <th>Product Image</th>
+        <th>Unit Cost</th>
+        <th>Detail</th>
+    </tr>
+    </thead>
+    <tbody th:each="product : ${productPage.content}">
+    <tr>
+        <td th:text="${product.modelName}"></td>
+        <td><img th:src="${product.productImage}" alt="Product Image"></td>
+        <td th:text="${product.unitCost}"></td>
+        <td><a th:href="@{'/' + ${product.productId}}">View Details</a></td>
+    </tr>
+    </tbody>
+</table>
+
+<div class="pagination">
+    <a th:each="page : ${#numbers.sequence(1, productPage.totalPages)}"
+       th:class="${page == productPage.number + 1} ? 'active'">
+        <span th:if="${page == productPage.number + 1}" th:text="${page}"></span>
+        <a th:unless="${page == productPage.number + 1}" th:href="@{/(page=${page})}" th:text="${page}"></a>
+    </a>
+</div>
+
+</body>
+</html>

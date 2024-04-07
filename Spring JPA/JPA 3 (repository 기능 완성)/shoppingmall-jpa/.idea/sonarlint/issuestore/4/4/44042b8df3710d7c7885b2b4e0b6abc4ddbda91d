@@ -1,0 +1,12 @@
+
+M
+java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8ƒ­ğÕÑ1
+W
+java:S1128":Remove this unused import 'javax.persistence.CascadeType'.( ì¤Ê8„­ğÕÑ1
+V
+java:S1128	"9Remove this unused import 'javax.persistence.JoinColumn'.(´Å¼á8„­ğÕÑ1
+T
+java:S1128
+"8Remove this unused import 'javax.persistence.OneToMany'.(«õù;8„­ğÕÑ1
+H
+java:S1128"+Remove this unused import 'lombok.Builder'.(§’Ğß8çÁùÙÑ1

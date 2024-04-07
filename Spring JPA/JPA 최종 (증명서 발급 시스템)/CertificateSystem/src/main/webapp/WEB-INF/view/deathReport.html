@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>사망신고서</title>
+</head>
+<body>
+<h2>사망신고서</h2>
+<table border="1">
+    <tr>
+        <th>신고일</th>
+        <th>성명</th>
+        <th>주민등록번호</th>
+        <th>사망일시</th>
+        <th>사망장소 - 구분</th>
+        <th>사망장소 - 주소</th>
+    </tr>
+    <tr>
+        <td th:text="${deathResident.birthDeathReportDate}"></td>
+        <td th:text="${deathResident.name}"></td>
+        <td th:text="${deathResident.residentRegistrationNumber}"></td>
+        <td th:text="${deathResident.deathDate}"></td>
+        <td th:text="${deathResident.deathPlaceCode}"></td>
+        <td th:text="${deathResident.deathPlaceAddress}"></td>
+    </tr>
+</table>
+
+<table border="1">
+    <tr>
+        <th>성명</th>
+        <th>주민등록번호</th>
+        <th>자격</th>
+        <th>이메일</th>
+        <th>전화번호</th>
+    </tr>
+    <tr>
+        <td th:text="${deathList.name}"></td>
+        <td th:text="${deathList.residentRegistrationNumber}"></td>
+        <td th:text="${deathList.birthReportQualificationsCode}"></td>
+        <td th:text="${deathList.emailAddress}"></td>
+        <td th:text="${deathList.phoneNumber}"></td>
+    </tr>
+</table>
+</body>
+</html>

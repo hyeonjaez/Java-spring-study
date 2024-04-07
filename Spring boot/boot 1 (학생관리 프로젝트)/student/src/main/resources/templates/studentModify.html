@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>학생 정보 수정</title>
+</head>
+<body>
+<form method="post" th:action="@{'/student/modify/' + ${student.id}}">
+    <label th:text="password"></label>: <input type="password" name="password" th:value="${student.password}"/><br/>
+    <label th:text="name"></label>: <input type="text" name="name" th:value="${student.name}"/><br/>
+    <label th:text="email"></label>: <input type="text" name="email" th:value="${student.email}"/><br/>
+    <label th:text="score"></label>: <input type="text" name="score" th:value="${student.score}"/><br/>
+    <label th:text="comment"></label>: <textarea name="comment" th:text="${student.comment}"></textarea><br/>
+    <br/>
+    <input type="submit" th:value="수정"/>
+</form>
+
+<br/>
+<br/>
+
+
+
+<form method="post" action="/logout">
+    로그아웃 :
+    <input type="submit">
+</form>
+</body>
+</html>

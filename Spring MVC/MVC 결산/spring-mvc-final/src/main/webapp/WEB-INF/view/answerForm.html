@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>답변하기</title>
+</head>
+<body>
+<h1>답변하기</h1>
+
+<h2 th:text="${inquiry.title}"></h2>
+<p th:text="${inquiry.content}"></p>
+
+<form method="post" th:action="@{/cs/admin/answer}">
+  <input type="hidden" name="inquiryId" th:value="${inquiry.id}" />
+
+  <label for="content">답변 내용:</label>
+  <textarea id="content" name="content" maxlength="40000" required></textarea><br/>
+
+  <input type="submit" value="답변 제출"/>
+  <br/>
+  <a th:href="@{/cs/admin}">문의 내역으로 돌아가기</a>
+</form>
+</body>
+</html>

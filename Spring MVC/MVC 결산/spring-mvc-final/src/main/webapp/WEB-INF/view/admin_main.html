@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>문의 내역</h1>
+<thead>
+<tr>
+    <th>Title</th>
+    <th>Category</th>
+    <th>Created At</th>
+</tr>
+<br/>
+</thead>
+
+
+<tr th:each="inquiry :${notAnsweredInquiryList}">
+    <br/>
+    <td th:text="${inquiry.title}"></td>
+    <td th:text="${inquiry.inquiryCategory.value}"></td>
+    <td th:text="${inquiry.createdAt.toString()}"></td>
+    <td>
+        <a th:href="@{'/cs/admin/answer?inquiry=' +${inquiry.id}}"><button>답변 하기</button></a>
+    </td>
+    <br/>
+
+</tr>
+
+
+<a href="/cs/logout">로그아웃</a>
+</body>
+
+</html>

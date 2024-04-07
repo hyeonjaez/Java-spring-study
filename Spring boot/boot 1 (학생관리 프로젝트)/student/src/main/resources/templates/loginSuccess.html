@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <title>메인 페이지</title>
+</head>
+<body>
+<p th:text="id+' : '+ ${student.id}"/>
+<a href="/student/registry">등록</a>
+<a th:href="@{'/student/view/' + ${student.id}}">조회</a>
+<a th:href="@{'/student/modify/' + ${student.id}}">수정</a>
+<br/>
+<br/>
+
+
+
+<form method="post" action="/logout">
+    로그아웃 :
+    <input type="submit">
+</form>
+</body>
+</html>

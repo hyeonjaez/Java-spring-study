@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Details</title>
+</head>
+<body>
+
+<h2>Product Details</h2>
+
+<div>
+    <p><strong>Model Name:</strong> <span th:text="${productDto.modelName}"></span></p>
+    <p><strong>Product Image:</strong> <img th:src="${productDto.productImage}" alt="Product Image"></p>
+    <p><strong>Unit Cost:</strong> <span th:text="${productDto.unitCost}"></span></p>
+    <p><strong>Model Number:</strong> <span th:text="${productDetailDto.modelNumber}"></span></p>
+    <p><strong>Description:</strong> <span th:text="${productDetailDto.description}"></span></p>
+</div>
+
+<a th:href="@{'/'}">Back</a>
+
+<form th:action="@{'/'+ ${productDto.productId}+'/delete'}" method="post">
+    <input type="submit" value="삭제">
+</form>
+
+</body>
+</html>

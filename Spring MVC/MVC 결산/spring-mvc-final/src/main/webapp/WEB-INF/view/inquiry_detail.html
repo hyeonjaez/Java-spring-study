@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inquiry Detail</title>
+</head>
+<body>
+<h1>문의 상세정보</h1>
+
+<p><strong>Title:</strong> <span th:text="${inquiry.title}"></span></p>
+<p><strong>Category:</strong> <span th:text="${inquiry.inquiryCategory}"></span></p>
+<p><strong>Content:</strong> <span th:text="${inquiry.content}"></span></p>
+<p><strong>Created At:</strong> <span th:text="${inquiry.createdAt}"></span></p>
+
+<p><strong>Files:</strong></p>
+<ul>
+    <li th:each="file : ${inquiry.files}">
+        <img th:src="@{'/Users/hyeon/Desktop/image/' + ${file.getName}}" alt="File Image">
+    </li>
+</ul>
+
+<p th:unless="${inquiry.answered}">
+    <strong>Status:</strong> <span>답변 안됨</span>
+</p>
+
+<p th:if="${inquiry.answered}">
+    <strong>Answer Content:</strong> <span th:text="${inquiry.answer.content}"></span><br>
+    <strong>Answer Created At:</strong> <span th:text="${inquiry.answer.answeredAt}"></span><br>
+    <strong>Answer CsId:</strong> <span th:text="${inquiry.answer.csId}"></span>
+</p>
+</body>
+</html>

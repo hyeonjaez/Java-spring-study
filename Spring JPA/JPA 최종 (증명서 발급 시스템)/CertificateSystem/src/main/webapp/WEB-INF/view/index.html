@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Resident Certificates</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .check-cell {
+            text-align: center;
+        }
+
+        .certificate-link {
+            color: blue;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<table>
+    <thead>
+    <tr>
+        <th>이름</th>
+        <th>주민등록등본</th>
+        <th>가족관계증명서</th>
+        <th>출생신고서</th>
+        <th>사망신고서</th>
+        <th>발급목록</th>
+        <th>삭제</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr th:each="entry : ${residentPage}">
+        <td th:text="${entry.name}"></td>
+        <td>
+            <a th:if="${entry.certificateTypeList.contains('주민등록등본')}"
+               th:href="@{'/report/ResidentRegistration/' + ${entry.residentSerialNumber}}"
+               class="certificate-link">주민등록등본</a>
+        </td>
+        <td>
+            <a th:if="${entry.certificateTypeList.contains('가족관계증명서')}"
+               th:href="@{'/report/FamilyRelationship/' + ${entry.residentSerialNumber}}"
+               class="certificate-link">가족관계증명서</a>
+        </td>
+        <td>
+            <a th:if="${entry.certificateTypeList.contains('출생신고서')}"
+               th:href="@{'/report/Birth/' + ${entry.residentSerialNumber}}"
+               class="certificate-link">출생신고서</a>
+        </td>
+        <td>
+            <a th:if="${entry.certificateTypeList.contains('사망신고서')}"
+               th:href="@{'/report/death/' + ${entry.residentSerialNumber}}"
+               class="certificate-link">사망신고서</a>
+        </td>
+        <td>
+            <a th:if="${entry.certificateTypeList.contains('발급목록')}"
+               th:href="@{'/certificates/' + ${entry.residentSerialNumber} + '/issue-list'}"
+               class="certificate-link">발급목록</a>
+        </td>
+        <td><!-- Delete button --></td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

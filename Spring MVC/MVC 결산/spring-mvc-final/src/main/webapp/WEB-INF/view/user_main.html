@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>문의 내역</h1>
+
+<form th:action="@{/cs}" method="get">
+    <label for="category">카테고리:</label>
+    <select id="category" name="category">
+        <option value="">전체</option>
+        <option value="불만 접수">불만 접수</option>
+        <option value="제안">제안</option>
+        <option value="환불/교환">환불/교환</option>
+        <option value="칭찬해요">칭찬해요</option>
+        <option value="기타 문의">기타 문의</option>
+    </select>
+    <button type="submit">검색</button>
+</form>
+
+
+<table>
+    <thead>
+    <tr>
+        <th>Title</th>
+        <th>Category</th>
+        <th>Created At</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="inquiry : ${inquiryList}">
+        <td>
+            <a th:href="@{/cs/inquiry-details(inquiryId=${inquiry.id})}" th:text="${inquiry.title}"></a>
+        </td>
+        <td th:text="${inquiry.inquiryCategory.value}"></td>
+        <td th:text="${inquiry.createdAt.toString()}"></td>
+        <td th:text="${inquiry.answered}"></td>
+    </tr>
+    </tbody>
+</table>
+</br>
+<a href="/cs/inquiry">문의하기</a>
+<a href="/cs/logout">로그아웃</a>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>학생 정보 등록</title>
+</head>
+<body>
+<form th:action="@{/student/register}" method="post">
+    <label th:text="#{password}"></label>: <input type="password" name="password"/><br/>
+    <label th:text="#{name}"></label>: <input type="text" name="name"/><br/>
+    <label th:text="#{email}"></label>: <input type="text" name="email"/><br/>
+    <label th:text="#{score}"></label>: <input type="text" name="score"/><br/>
+    <label th:text="#{comment}"></label>: <textarea name="comment" rows="10" cols="80"></textarea><br/>
+    <br/>
+    <input type="submit"/>
+</form>
+</body>
+</html>

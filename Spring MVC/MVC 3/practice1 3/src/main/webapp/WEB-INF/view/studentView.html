@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Student View</title>
+</head>
+<body>
+<h2 th:text="#{id}+' : '+ ${student.id}"/>
+<p th:text="#{name} +' : '+ ${student.name}"/>
+<p th:text="#{email}+' : ' + ${student.email}"/>
+<p th:text="#{score}+' : ' + ${student.score}" th:unless="${hideScore}"/>
+<p th:text="#{comment}+' : ' + ${student.comment}" th:unless="${hideScore}"/>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>문의하기</title>
+</head>
+<body>
+<h1>문의하기</h1>
+<form th:action="@{/cs/inquiry}" method="post" enctype="multipart/form-data">
+    <label>제목:</label>
+    <input type="text" name="title" minlength="2" maxlength="200" required>
+    <br>
+
+    <label>분류:</label>
+    <select id="category" name="category" required>
+        <option value="불만 접수">불만 접수</option>
+        <option value="제안">제안</option>
+        <option value="환불/교환">환불/교환</option>
+        <option value="칭찬해요">칭찬해요</option>
+        <option value="기타 문의">기타 문의</option>
+    </select><br/>
+
+
+    <label>내용:</label>
+    <textarea id="content" name="content" maxlength="40000"></textarea><br/>
+    <br/>
+    <label>파일:</label>
+    <input type="file" id="file" name="file" multiple>
+    <br/>
+
+    <button type="submit">제출</button>
+    <br/>
+
+</form>
+<a th:href="@{/cs}">문의 내역으로 돌아가기</a>
+</body>
+</html>

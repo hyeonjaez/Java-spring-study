@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>가족관계증명서</title>
+</head>
+<body>
+
+<h2>가족관계증명서</h2>
+<table border="1">
+    <tr>
+        <th>제목</th>
+        <th>발급일</th>
+        <th>증명서 확인 번호</th>
+    </tr>
+    <tr>
+        <td>가족관계증명서</td>
+        <td th:text="${certificate.certificateIssueDate}">발급일</td>
+        <td th:text="${certificate.certificateConfirmationNumber}">증명서 확인 번호</td>
+    </tr>
+</table>
+
+<table border="1">
+
+    <th>등록기준지(본적)</th>
+    <td th:text="${address}">주소</td>
+
+</table>
+
+
+
+<h2></h2>
+<table border="1">
+    <tr>
+        <th>구분</th>
+        <th>성명</th>
+        <th>출생연월일</th>
+        <th>주민등록번호</th>
+        <th>성별</th>
+    </tr>
+    <tr th:each="family : ${familyList}">
+        <td th:text="${family.familyRelationshipCode}">구분</td>
+        <td th:text="${family.name}">성명</td>
+        <td th:text="${family.birthDate}">출생연월일</td>
+        <td th:text="${family.residentRegistrationNumber}">주민등록번호</td>
+        <td th:text="${family.genderCode}">성별</td>
+
+    </tr>
+
+</table>
+
+
+
+</body>
+</html>
